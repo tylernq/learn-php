@@ -24,6 +24,9 @@ if (is_string($a_bool)){
     echo "String: $a_bool";
 }
 
+
+
+// Booblean 布尔类型
 // 指定布尔值, 不区分大小写,下列的等价.
 $foo = True;
 $foo = TRUE;
@@ -50,5 +53,34 @@ if ($show_separatora == TRUE){
 if ($show_separatora) {
     echo "<hr> \n";
 }
+
+/*
+当转换为 boolean 时，以下值被认为是 FALSE：
+
+
+布尔值 FALSE 本身
+整型值 0（零）
+浮点型值 0.0（零）
+空字符串，以及字符串 "0"
+不包括任何元素的数组
+特殊类型 NULL（包括尚未赋值的变量）
+从空标记生成的 SimpleXML 对象
+
+
+所以的其他值都被认为是 TRUE，包括任何资源和 NAN，任何非零值。
+  
+*/
+
+var_dump((bool) "");        // bool(false)
+var_dump((bool) 1);         // bool(true)
+var_dump((bool) -2);        // bool(true)
+var_dump((bool) "foo");     // bool(true)
+var_dump((bool) 2.3e5);     // bool(true)
+var_dump((bool) array(12)); // bool(true)
+var_dump((bool) array());   // bool(false)
+var_dump((bool) "false");   // bool(true)
+
+// 整形 Integer
 ?>
+
 
